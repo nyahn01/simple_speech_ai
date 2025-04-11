@@ -1,7 +1,3 @@
-Certainly! Here's a more professional and concise version of your `README.md`, with the notebook section removed and a focus on clear structure and industry-standard tone:
-
----
-
 # SimpleSpeechAI
 
 **SimpleSpeechAI** is a bilingual Korean-English voice assistant designed for older adults. Built with GPT-4 and Typecast, it offers natural, respectful conversations in a friendly tone—particularly in the Gyeongsang-do dialect—and supports voice-first interaction through a clean Streamlit interface.
