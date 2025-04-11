@@ -1,128 +1,139 @@
+Certainly! Here's a more professional and concise version of your `README.md`, with the notebook section removed and a focus on clear structure and industry-standard tone:
+
+---
+
 # SimpleSpeechAI
 
-A Korean-English Voice Conversation Assistant powered by GPT-4 and Typecast text-to-speech.
+**SimpleSpeechAI** is a bilingual Korean-English voice assistant designed for older adults. Built with GPT-4 and Typecast, it offers natural, respectful conversations in a friendly tone—particularly in the Gyeongsang-do dialect—and supports voice-first interaction through a clean Streamlit interface.
 
-## 🌟 Features
+---
 
-- Real-time conversation with an AI assistant
-- Bilingual support for Korean and English
-- High-quality Korean text-to-speech using Typecast API
-- Clean Streamlit interface
-- Persistent conversation history
-- Secure API key management using environment variables
+## 🚀 Features
 
-## 🛠️ Technologies
+- **Voice-First Interaction**: Real-time conversation with speech output
+- **Bilingual Support**: Understands and responds in Korean and English
+- **Localized Personality**: Uses friendly expressions and dialect (e.g., Gyeongsang-do 사투리)
+- **Navigation Assistance**: Offers easy-to-follow transit guidance
+- **Secure API Handling**: Environment variable-based key management
+- **User-Friendly Interface**: Simple layout for older users, built with Streamlit
+
+---
+
+## 🛠️ Tech Stack
 
 - **Python 3.9**
-- **Streamlit** - Interactive web application framework
-- **OpenAI GPT-4** - Natural language processing
-- **Typecast API** - Korean text-to-speech synthesis
-- **Conda** - Environment management
-- **python-dotenv** - Environment variable management
+- **Streamlit** – UI framework
+- **OpenAI GPT-4** – Natural language generation
+- **Typecast API** – Korean TTS
+- **python-dotenv** – Secure credential management
+- **Conda / pip** – Environment management
 
-## 🚀 Getting Started
+---
+
+## 🔧 Setup Instructions
 
 ### Prerequisites
 
-- Python 3.9 or later
-- Conda (recommended for environment management) or pip
-- OpenAI API key
-- Typecast API key
+- Python 3.9+
+- Conda (recommended) or pip
+- OpenAI and Typecast API keys
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/simple_speech_ai.git
-   cd simple_speech_ai
-   ```
+Clone the repository:
 
-2. Create and activate environment:
-   
-   With Conda:
-   ```bash
-   conda env create -f environment.yml
-   conda activate speech-ai
-   ```
-   
-   With pip:
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+git clone https://github.com/yourusername/simple_speech_ai.git
+cd simple_speech_ai
+```
 
-3. Configure your API keys:
-   - Copy `.env.example` to `.env`:
-     ```bash
-     cp .env.example .env
-     ```
-   - Edit the `.env` file and add your actual API keys:
-     ```
-     OPENAI_API_KEY=your_openai_api_key
-     TYPECAST_API_KEY=your_typecast_api_key
-     TYPECAST_ACTOR_ID=your_preferred_actor_id
-     ```
+Create and activate the environment:
 
-### Running the Application
+<details>
+<summary>Using Conda</summary>
 
-Start the Streamlit application:
+```bash
+conda env create -f environment.yml
+conda activate speech-ai
+```
+</details>
+
+<details>
+<summary>Using pip</summary>
+
+```bash
+pip install -r requirements.txt
+```
+</details>
+
+Configure environment variables:
+
+```bash
+cp .env.example .env
+```
+
+Update `.env` with your API keys:
+
+```
+OPENAI_API_KEY=your_openai_key
+TYPECAST_API_KEY=your_typecast_key
+TYPECAST_ACTOR_ID=your_actor_id
+```
+
+---
+
+## ▶️ Run the App
 
 ```bash
 streamlit run streamlit_app.py
 ```
 
-Then open your browser and navigate to the URL shown in the terminal (usually http://localhost:8501).
+Open the local URL provided (typically [http://localhost:8501](http://localhost:8501)).
 
-## 💬 How to Use
+---
 
-1. Type a message in English or Korean into the chat input
-2. The AI will respond in the same language (with some Korean phrases mixed in for English inputs)
-3. The response will automatically be converted to speech and played
+## 💡 Usage Guide
 
-Use the "Clear Conversation" button in the sidebar to start a new conversation.
+1. Type a message in Korean or English
+2. The assistant responds in the same language and plays a voice reply
+3. Click **“Clear Conversation”** to reset the session
 
-## 📝 Project Structure
+---
+
+## 📁 Project Structure
 
 ```
 simple_speech_ai/
-├── .env                   # Environment variables (not in version control)
-├── .env.example           # Example environment variables file
-├── audio_files/           # Generated speech audio files
-├── notebook/              # Jupyter notebooks for development
-│   ├── audio_files/       # Audio files used during development
-│   └── template_notebook.ipynb  # Template for using environment variables
-├── utils/                 # Utility modules
-│   ├── __init__.py        # Package initialization
-│   └── api_config.py      # API configuration utilities
-├── environment.yml        # Conda environment configuration
-├── requirements.txt       # Pip requirements
-├── streamlit_app.py       # Main application file
+├── .env.example           # Environment config template
+├── audio_files/           # Cached speech files
+├── utils/                 # API configuration helpers
+├── environment.yml        # Conda dependencies
+├── requirements.txt       # pip dependencies
+├── streamlit_app.py       # Main app entry point
 └── README.md              # Project documentation
 ```
 
-## 🧪 Using Jupyter Notebooks
+---
 
-For development and testing, use the `template_notebook.ipynb` as a starting point. This template shows how to:
+## 🔐 Security Best Practices
 
-1. Import the utility functions from the `utils` package
-2. Load API keys from environment variables
-3. Make API calls to OpenAI and Typecast securely
+- API keys are stored securely using `.env` (excluded from version control)
+- `.gitignore` includes `.env` and audio cache directories
+- Avoid hardcoding any sensitive information in source files
 
-Never hardcode API keys in your notebooks. The template demonstrates the proper way to access them from environment variables.
+---
 
-## ⚠️ Security Notes
+## 📄 License
 
-- API keys are stored in the `.env` file which should never be committed to version control
-- The `.gitignore` file is configured to exclude the `.env` file
-- Generated audio files are saved in the `audio_files` directory
-- Always use environment variables for sensitive information
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 📜 License
+---
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 🙌 Acknowledgements
 
-## 🙏 Acknowledgements
+- [OpenAI](https://openai.com/)
+- [Typecast](https://typecast.ai/)
+- [Streamlit](https://streamlit.io/)
+- [python-dotenv](https://github.com/theskumar/python-dotenv)
 
-- [OpenAI](https://openai.com/) for GPT-4
-- [Typecast](https://typecast.ai/) for text-to-speech capabilities
-- [Streamlit](https://streamlit.io/) for the web application framework
-- [python-dotenv](https://github.com/theskumar/python-dotenv) for environment variable management
+---
